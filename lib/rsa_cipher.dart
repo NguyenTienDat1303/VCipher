@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:VCipher/cipher_utils.dart';
 
 class RsaCipher {
@@ -18,7 +17,7 @@ class RsaCipher {
 //      e = 377;
 
       for (var i = 2; i < phi; i++) {
-        if ((e * i)%phi == 1) {
+        if ((e * i) % phi == 1) {
           d = i;
           break;
         }
@@ -27,10 +26,10 @@ class RsaCipher {
       print('phi: $phi');
       print('e: $e');
       print('d: $d');
-      print('Public key: (e = $e;n = $n)');
-      print('Private key: (d = $d;n = $n)');
+      print('Khóa công khai: (e = $e;n = $n)');
+      print('Khóa bí mật: (d = $d;n = $n)');
       var y = pow(input, e) % n;
-      var x = pow(y,d) %n;
+      var x = pow(y, d) % n;
       print('y: $y');
       print('x: $x');
     }
